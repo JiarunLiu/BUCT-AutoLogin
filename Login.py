@@ -51,15 +51,15 @@ def auto_login(weburl, username, password):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('username', dest="username", default="2019000000", type=str,
+    parser.add_argument('-u', '--username', dest="username", default="2019000000", type=str,
                         help='your buct id.')
-    parser.add_argument('password', dest="password", default="00000000", type=str,
+    parser.add_argument('-p', '--password', dest="password", default="00000000", type=str,
                         help='your buct password.')
-    parser.add_argument('weburl', dest="weburl", default='https://tree.buct.edu.cn', type=str,
+    parser.add_argument('-w', '--weburl', dest="weburl", default='https://tree.buct.edu.cn', type=str,
                         help='BUCT weburl, Default: \"https://tree.buct.edu\".')
-    parser.add_argument('times', dest="times", default='2020-02-01 00:15:00.000000', type=str,
+    parser.add_argument('-t', '--times', dest="times", default='2020-02-01 00:15:00.000000', type=str,
                         help='Target Login Time.')
-    parser.add_argument('step', dest="step", default=60, type=int,
+    parser.add_argument('-s','--step', dest="step", default=60, type=int,
                         help='Update Step Size. Default is 60 sec.')
     args = parser.parse_args()
 
