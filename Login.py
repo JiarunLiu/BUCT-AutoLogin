@@ -1,5 +1,4 @@
 import time
-import os
 from selenium import webdriver
 # 导入处理alert所需要的包
 from selenium.common.exceptions import NoAlertPresentException
@@ -65,6 +64,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     success = True
+    i = 0
     while True:
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
         if now > args.times:
@@ -74,6 +74,9 @@ if __name__ == "__main__":
                 print("Log in Failed.")
                 success = False
             break
+        else:
+            i += 1
+            print("Try Login {} times.".format(i))
         time.sleep(args.step)
 
     if success:
